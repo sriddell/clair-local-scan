@@ -1,0 +1,5 @@
+FROM ubuntu:18.04
+ADD clair-scanner ./clair-scanner
+RUN chmod +x clair-scanner
+
+ENTRYPOINT ["./clair-scanner", "--report=report.json", "--clair http://clair:6060", "434313288222.dkr.ecr.us-east-1.amazonaws.com/quercus/fixpack-jasperserver-pro"]
